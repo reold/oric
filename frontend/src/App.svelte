@@ -129,7 +129,7 @@
       <!-- loading stage -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-10 w-10 text-amber-400"
+        class="h-10 w-10 text-amber-400 animate-pulse"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
