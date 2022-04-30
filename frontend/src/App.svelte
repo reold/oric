@@ -31,17 +31,15 @@
       body: formData,
     };
 
-    fetch("http://localhost:8000/api/contribute", options)
+    fetch("http://localhost:8000/api/add", options)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         currentStage = 2;
-        console.log(data);
       })
       .catch((error) => {
         currentStage = 0;
-        console.log(error);
       });
   };
 </script>

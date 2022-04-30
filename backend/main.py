@@ -22,14 +22,23 @@ async def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-@app.post("/api/contribute")
-async def api_contribute(file: UploadFile = File(...), title: str = Form(...), publisher: str = Form(...)):
+@app.post("/api/add")
+async def api_add(file: UploadFile = File(...), title: str = Form(...), publisher: str = Form(...)):
+
+    len_uploads_db = len(uploads_db.fetch())
+
+    print(len_uploads_db)
 
     file_extention = file.filename.split(".")[-1]
 
     upload_info = {"title": title, "publisher": publisher, "content_filename": f"{uuid()}.{file_extention}",
-                   }
+                   "index": len_uploads_db}
 
     uploads_db.insert(upload_info)
     uploads_drive.put(upload_info["content_filename"], file.file)
     return {"details": "success"}
+
+
+# @app.get("/api/get")
+# @app.get("/api/read")
+# async def api_read():
