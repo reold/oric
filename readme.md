@@ -5,3 +5,5 @@
 ## License
 
 This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
+
+NB: This is a barebones MVP of ORIC, the complete platform is closed-source. Most secrets, keys, etc won't work. To contribute tweet [here](https://twitter.com/redicrafty).
